@@ -1,5 +1,6 @@
 app.views.BuildingListView = Backbone.View.extend({
 	tagName: 'ul',
+
 	attributes: {class: 'topcoat-list list'},
 
 	initialize:function(){
@@ -9,7 +10,7 @@ app.views.BuildingListView = Backbone.View.extend({
 	render: function(){
 		this.$el.empty();
 		_.each(this.model.models, function(building){
-			tihs.$el.append(new app.views.BuildingListItemView({model: building}).render().el);
+			this.$el.append(new app.views.BuildingListItemView({model: building}).render().el);
 		}, this);
 		return this;
 	}

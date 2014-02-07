@@ -1,7 +1,7 @@
 app.routers.MainRouter = Backbone.Router.extend({
 	routes: {
 		"": "home",
-		"building/:id" : "buildingDetails",
+		"buildings/:id" : "buildingDetails",
 		"building/:id/map": "map" 
 	},
 
@@ -10,8 +10,8 @@ app.routers.MainRouter = Backbone.Router.extend({
 	},
 
 	home: function(){
-		if(!app.homeView){
-			app.mainView = new app.view.MainView();
+		if(!app.mainView){
+			app.mainView = new app.views.MainView();
 			app.mainView.render()
 		} else {
 			app.homeView.delegateEvents();
@@ -20,7 +20,8 @@ app.routers.MainRouter = Backbone.Router.extend({
 	},
 
 	buildingDetails: function(id){
-		var building = new  app.models.Building({id : id});
+		console.log("clicked");
+		var building = new  app.models.Building({id: id});
 		building.fetch({
 			success: function(data){
 				//var buildingView = app.views.BuildingView({model: data});

@@ -7,10 +7,10 @@ var app = {
 };
 
 $(document).on("ready", function () {
-    app.router = new app.routers.AppRouter();
-    app.utils.templates.load(["MainView", "BuildingView", "BuidlingListItemView", "MapView"],
+    app.router = new app.routers.MainRouter();
+    app.utils.templates.load(["MainView", "BuildingView", "BuildingListItemView", "MapView"],
         function () {
-            app.router = new app.routers.AppRouter();
+            app.router = new app.routers.MainRouter();
             Backbone.history.start();
         });
 });

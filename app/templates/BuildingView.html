@@ -1,11 +1,6 @@
 <div class="topcoat-navigation-bar">
-    <div class="topcoat-navigation-bar__item left quarter">
-        <a class="topcoat-icon-button--quiet back-button" href="#">
-          <span class="topcoat-icon topcoat-icon--back"></span>
-        </a>
-    </div>
     <div class="topcoat-navigation-bar__item center half">
-        <h1 class="topcoat-navigation-bar__title">Building</h1>
+        <h1 class="topcoat-navigation-bar__title"><a href="./"><%= buildingName %></a></h1>
     </div>
 </div>
 
@@ -16,9 +11,9 @@
     <span class="location"></span>
     <div class="topcoat-list__container scroller">
         <ul class="topcoat-list list actions">
-            <li class="topcoat-list__item"><a href="tel:<%= officePhone %>"><p>Call Office</p><p><%= officePhone %></p><div class="action-icon icon-call"></div></a></li>
+            <li class="topcoat-list__item"><a href="tel:<%= telePhone %>"><p>Call Office</p><p><%= telePhone %></p><div class="action-icon icon-call"></div></a></li>
             <li class="topcoat-list__item"><a href="mailto:<%= email %>"><p>Email</p><p><%= email %></p><div class="action-icon icon-mail"></div></a></li>
-            <li class="topcoat-list__item"><a href="#employees/<%= id %>/map"><p>Navigate Here</p><p><%= city %></p><div class="action-icon icon-location"></div></a></li>
+            <li class="topcoat-list__item"><a href="#employees/<%= id %>/map"><p>Navigate Here</p><p><%= email %></p><div class="action-icon icon-location"></div></a></li>
         </ul>
     </div>
 </div>

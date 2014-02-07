@@ -13,7 +13,7 @@
 }
 
 .topcoat-icon--back {
-    background: url("images/back_light.svg") no-repeat;
+    background: url("../images/back_light.svg") no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -123,7 +123,7 @@ ul {
 }
 
 .icon-call {
-    background: transparent url(images/call.svg);
+    background: transparent url(../images/call.svg);
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -131,7 +131,7 @@ ul {
 }
 
 .icon-sms {
-    background: transparent url(images/chat.svg);
+    background: transparent url(../images/chat.svg);
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -139,7 +139,7 @@ ul {
 }
 
 .icon-mail {
-    background: transparent url(images/email.svg);
+    background: transparent url(../images/email.svg);
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -147,7 +147,7 @@ ul {
 }
 
 .icon-manager {
-    background: transparent url(images/next.svg);
+    background: transparent url(../images/next.svg);
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -155,7 +155,7 @@ ul {
 }
 
 .icon-reports {
-    background: transparent url(images/next.svg);
+    background: transparent url(../images/next.svg);
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -163,7 +163,7 @@ ul {
 }
 
 .icon-location {
-    background: transparent url(images/location.svg);
+    background: transparent url(../images/location.svg);
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -171,7 +171,7 @@ ul {
 }
 
 .chevron {
-    background: transparent url(images/next_blue.svg);
+    background: transparent url(../images/next_blue.svg);
     background-repeat: no-repeat;
     background-size: contain;
     width: 20px;
