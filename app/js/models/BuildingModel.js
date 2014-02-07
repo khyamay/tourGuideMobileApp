@@ -1,4 +1,4 @@
-app.models.Building = Backbone.Model.Extend({
+app.models.Building = Backbone.Model.extend({
 	
 	initailize: function(){
 		this.building = new app.models.BuildingCollection();
