@@ -1,12 +1,11 @@
 app.views.MainView = Backbone.View.extend({
 	initialize: function(){
-		// this.searchResults = new app.models.BuildingCollection();
-		// this.searchResultsView = new app.views.BuildingListView({model: this.searchResults});
+		this.searchResults = new app.models.BuildingCollection();
+		//this.searchResultsView = new app.views.BuildingListView({model: this.searchResults});
 		
-		this.buildingList = new app.models.BuildingCollection();
-        this.buildingListView = new app.views.BuildingListView({model: this.buildingList})
+		this.buildingList = new app.models.BuildingCollection();       
         this.buildingList.fetch({reset: true, data:{name:""}});
-       
+       	this.buildingListView = new app.views.BuildingListView({model: this.buildingList});
 	},
 
 	render: function(){
@@ -18,15 +17,23 @@ app.views.MainView = Backbone.View.extend({
 
 	events: {
 		"keyup .search-key" : "search",
-		"keypress .search-key" : "onkehpress"
+		"keypress .search-key" : "onkeypress"
 	},
 
 	search: function (event){
+		event.preventDefault();
+		//this.searchResults = new app.models.BuildingCollection();
+		//this.searchResultsView = new app.views.BuildingListView({model: this.searchResults});
+		//this.buildingListView = new app.views.BuildingListView({model: this.searchResults});
 		var key = $('.search-key').val();
-		this.searchResults.fetch({reset: true, data: {name: key}});
+		search = this.searchResults.fetch({reset: true, data: {name: key}});
+		console.log(this.searchResults.toJSON());
+		//this.searchResults.reset(search)
+		 //this.searchResults.on("reset", this.render, this);
+
 	},
 
-	onkehpress: function(event){
+	onkeypress: function(event){
 		if(event.keyCode === 13){
 			event.preventDefault();
 		}
