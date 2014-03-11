@@ -5,6 +5,7 @@ app.views.BuildingListView = Backbone.View.extend({
 
 	initialize:function(){
 		this.model.on("reset", this.render, this);
+		
 	},
 
 	render: function(){

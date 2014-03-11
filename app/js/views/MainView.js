@@ -1,6 +1,7 @@
 app.views.MainView = Backbone.View.extend({
 	initialize: function(){
-		this.searchResults = new app.models.BuildingCollection();
+		className: '.scroller',
+		//this.searchResults = new app.models.BuildingCollection();
 		//this.searchResultsView = new app.views.BuildingListView({model: this.searchResults});
 		
 		this.buildingList = new app.models.BuildingCollection();       
@@ -11,7 +12,7 @@ app.views.MainView = Backbone.View.extend({
 	render: function(){
 		this.$el.html(this.template());
 		//$('.scroller', this.el).append(this.searchResultsView.render().el);
-		$('.scroller', this.el).append(this.buildingListView.render().el);
+		this.$el.append(this.buildingListView.render().el);
 		return this;
 	},
 
@@ -26,9 +27,11 @@ app.views.MainView = Backbone.View.extend({
 		//this.searchResultsView = new app.views.BuildingListView({model: this.searchResults});
 		//this.buildingListView = new app.views.BuildingListView({model: this.searchResults});
 		var key = $('.search-key').val();
-		search = this.searchResults.fetch({reset: true, data: {name: key}});
-		console.log(this.searchResults.toJSON());
-		//this.searchResults.reset(search)
+		this.buildingList.fetch({reset: true, data: {name: key}});
+		this.BuildingListView = new app.views.BuildingListView({model: this.buildingList});
+		//this.BuildingListView.render();
+		
+		//this.searchResults.reset(search);
 		 //this.searchResults.on("reset", this.render, this);
 
 	},
