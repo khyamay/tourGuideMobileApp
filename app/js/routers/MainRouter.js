@@ -2,7 +2,7 @@ app.routers.MainRouter = Backbone.Router.extend({
 	routes: {
 		"": "home",
 		"buildings/:id" : "buildingDetails",
-		//"building/:id/map": "map" 
+		"buildings/:id/map": "map" 
 	},
 
 	initialize: function(){
@@ -32,9 +32,9 @@ app.routers.MainRouter = Backbone.Router.extend({
 		});
 	},
 
-	//map: function (id) {
-      //  app.slider.slidePage(new app.views.MapView().render().$el);
+	map: function (id) {
+      app.slider.slidePage(new app.views.MapView().render().$el);
 
-   // }
+   }
 
 });
