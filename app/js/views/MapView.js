@@ -37,20 +37,31 @@ app.views.MapView = Backbone.View.extend({
         directionsDisplay.setMap(this.map);
         directionsDisplay.setPanel(this.$el.find('#directions-panel')[0]);
 
-        var start = new google.maps.LatLng(50.797780, -1.096246);
-        var end = new google.maps.LatLng(50.79769531954814, -1.0982452630996);
+        //ToDo Add error handling
+        if(navigator.geolocation){
 
-        var request = {
-        origin: start,
-        destination: end,
-        travelMode: google.maps.TravelMode.WALKING
-        };
+            navigator.geolocation.getCurrentPosition(function(position){
+                var start = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
-        directionsService.route(request, function(response, status) {
-            if (status == google.maps.DirectionsStatus.OK) {
-                directionsDisplay.setDirections(response);
+                var start = start;
+                var end = new google.maps.LatLng(51.335806, -0.774978);
+
+                var request = {
+                origin: start,
+                destination: end,
+                travelMode: google.maps.TravelMode.WALKING
+                };
+
+                 directionsService.route(request, function(response, status) {
+                    if (status == google.maps.DirectionsStatus.OK) {
+                        directionsDisplay.setDirections(response);
                         }
-                });
+                    });
+            });
+
+        } else{
+            handleNoGeolocation(false);
+        }
        
     },
     
