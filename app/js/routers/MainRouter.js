@@ -36,16 +36,18 @@ app.routers.MainRouter = Backbone.Router.extend({
 	map: function (id) {
 		// var container = $('#content');
 		// container.empty();
-
-		 var mapView = new app.views.MapView();
-		// container.append(mapView.render().$el);
-		// mapView.resize();
-		// mapView.render();
-     app.slider.slidePage(mapView.$el);
-     mapView.render();
-         
-
-
+		var building = new  app.models.Building({id: id});
+		building.fetch({
+			success: function(data){
+			console.log(data);
+			var mapView = new app.views.MapView({model: data});
+			// container.append(mapView.render().$el);
+			// mapView.resize();
+			// mapView.render();
+			app.slider.slidePage(mapView.$el);
+			mapView.render();
+			}
+		});
    }
 
 });
