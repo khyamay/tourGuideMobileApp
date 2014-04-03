@@ -191,3 +191,14 @@ ul {
     bottom: 0;
     overflow: hidden;
 }
+
+#map-canvas{
+    height:40%;
+    margin:0px;
+    padding:0px;
+}
+
+#direction-panel{
+    height:60%;
+    overflow: auto;
+}
