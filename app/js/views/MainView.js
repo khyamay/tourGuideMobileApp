@@ -7,10 +7,6 @@ app.views.MainView = Backbone.View.extend({
 	},
 
 	render: function(){
-	// _.each(this.buildingList.models, function(building){
-	// 		console.log(building.get('lng'));
-	// 	}, this);
-
 		this.$el.html(this.template());
 		this.$el.append(this.buildingListView.render().el);
 		return this;
@@ -24,8 +20,10 @@ app.views.MainView = Backbone.View.extend({
 	search: function (event){
 		event.preventDefault();
 		var key = $('.search-key').val();
-		this.buildingList.fetch({reset: true, data: {name: key}});
-		this.BuildingListView = new app.views.BuildingListView({model: this.buildingList});
+		this.buildingList.fetch({reset: true, data: ({name: key})
+		});
+		
+//		this.buildingListView = new app.views.BuildingListView({model: this.buildingList});
 
 	},
 

@@ -10,7 +10,7 @@ app.views.MapView = Backbone.View.extend({
         var lng = this.model.get('lng');
         var directionsService = new google.maps.DirectionsService();  
         var directionsDisplay = new google.maps.DirectionsRenderer();
-        var myLatlng = new google.maps.LatLng(51.903679, -8.468274);
+        var myLatlng = new google.maps.LatLng(lat, lng);
         var mapOptions = {
             center: myLatlng,
             zoom: 12,
@@ -45,7 +45,7 @@ app.views.MapView = Backbone.View.extend({
             });
 
         } else{
-            handleNoGeolocation(false);
+            alert('Geolocation is not supported!');
         }
        
     },
@@ -55,7 +55,6 @@ app.views.MapView = Backbone.View.extend({
     },
 
     render: function () {
-        console.log(this.model.get('lng'));
         this.$el.html(this.template(this.attributes));
         this.initMap();
         return this;
